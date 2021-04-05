@@ -13,7 +13,9 @@ mongoose.set("useCreateIndex", true);
 mongoose.set("useUnifiedTopology", true);
 mongoose
   .connect(
-    "mongodb+srv://gaurav:cMnqWj9SfZ74UJJ0@cluster0.pzskx.mongodb.net/node-angular?retryWrites=true&w=majority"
+    "mongodb+srv://gaurav:" +
+      process.env.MONGO_ATLAS_PW +
+      "@cluster0.pzskx.mongodb.net/node-angular?retryWrites=true&w=majority"
   )
   .then(() => {
     console.log("Connected to db");
